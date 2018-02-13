@@ -3,12 +3,22 @@
   <head>
     <title>RailsWikinimous</title>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <div class="navbar">
+      <!-- Logo -->
+      <%= link_to "Wikinimous", articles_path, class:"navbar-wagon-brand" %>
+      <%= link_to "New article", new_article_path, class:"btn btn-primary" %>
+    </div>
+
     <%= yield %>
   </body>
 </html>

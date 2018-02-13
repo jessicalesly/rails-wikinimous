@@ -1,13 +1,17 @@
-<h1>Wikinimous</h1>
-<ul>
-  <% @articles.reverse.each do |article| %>
-    <li>
-      <%= link_to article.title, article_path(article) %>
-      <%= link_to "Edit", edit_article_path(article) %>
-      <%= link_to "Destroy", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %>
-      <p><%= article.content %></p>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 offset-1">
+      <ul class="list-unstyled">
+        <% @articles.reverse.each do |article| %>
+          <li>
+            <%= link_to article.title, article_path(article) %>
+            <p><%= article.content %></p>
+            <%= link_to "Edit", edit_article_path(article), class:"btn-article" %>
+            <%= link_to "Destroy <i class='fas fa-trash-alt'></i>".html_safe, article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class:"btn-article" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<%= link_to "New article", new_article_path %>
